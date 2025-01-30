@@ -1,0 +1,201 @@
+﻿{
+"Version": "0.8.8.0",
+"Object": {
+"$type": "System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib],[RogueEssence.Data.EntrySummary, RogueEssence]], System.Private.CoreLib",
+"ferris": {
+"$type": "RogueEssence.Data.MonsterEntrySummary, RogueEssence",
+"Forms": [
+{
+"Name": {
+"DefaultText": "Aggron",
+"LocalTexts": {
+"ja": "ボスゴドラ",
+"ko": "보스로라",
+"zh-hant": "波士可多拉",
+"fr": "Galeking",
+"de": "Stolloss",
+"es": "Aggron",
+"it": "Aggron",
+"ja-jp": "ボスゴドラ",
+"zh-hans": "波士可多拉"
+}
+},
+"Released": true,
+"Temporary": false
+}
+],
+"Name": {
+"DefaultText": "Aggron",
+"LocalTexts": {
+"ja": "ボスゴドラ",
+"ko": "보스로라",
+"zh-hant": "波士可多拉",
+"fr": "Galeking",
+"de": "Stolloss",
+"es": "Aggron",
+"it": "Aggron",
+"ja-jp": "ボスゴドラ",
+"zh-hans": "波士可多拉"
+}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 9992
+},
+"shasta": {
+"$type": "RogueEssence.Data.MonsterEntrySummary, RogueEssence",
+"Forms": [
+{
+"Name": {
+"DefaultText": "Cubone",
+"LocalTexts": {
+"ja": "カラカラ",
+"ko": "탕구리",
+"zh-hant": "卡拉卡拉",
+"fr": "Osselait",
+"de": "Tragosso",
+"es": "Cubone",
+"it": "Cubone",
+"ja-jp": "カラカラ",
+"zh-hans": "卡拉卡拉"
+}
+},
+"Released": true,
+"Temporary": false
+}
+],
+"Name": {
+"DefaultText": "Cubone",
+"LocalTexts": {
+"ja": "カラカラ",
+"ko": "탕구리",
+"zh-hant": "卡拉卡拉",
+"fr": "Osselait",
+"de": "Tragosso",
+"es": "Cubone",
+"it": "Cubone",
+"ja-jp": "カラカラ",
+"zh-hans": "卡拉卡拉"
+}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 9994
+},
+"edelweiss": {
+"$type": "RogueEssence.Data.MonsterEntrySummary, RogueEssence",
+"Forms": [
+{
+"Name": {
+"DefaultText": "Eternal Floette",
+"LocalTexts": {
+"ja": "",
+"ko": "",
+"fr": "Floette Éternel",
+"de": "Floette (Ewigblütler)",
+"es": "",
+"it": ""
+}
+},
+"Released": true,
+"Temporary": false
+}
+],
+"Name": {
+"DefaultText": "Floette",
+"LocalTexts": {
+"ja": "フラエッテ",
+"ko": "플라엣테",
+"zh-hant": "花葉蒂",
+"fr": "Floette",
+"de": "Floette",
+"es": "Floette",
+"it": "Floette",
+"ja-jp": "フラエッテ",
+"zh-hans": "花叶蒂"
+}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 9991
+},
+"grisha": {
+"$type": "RogueEssence.Data.MonsterEntrySummary, RogueEssence",
+"Forms": [
+{
+"Name": {
+"DefaultText": "Sneasler",
+"LocalTexts": {
+"ja": "オオニューラ",
+"ko": "포푸니크",
+"zh-hant": "大狃拉",
+"fr": "Farfurex",
+"de": "Snieboss",
+"it": "Sneasler",
+"ja-jp": "オオニューラ",
+"zh-hans": "大狃拉"
+}
+},
+"Released": true,
+"Temporary": false
+}
+],
+"Name": {
+"DefaultText": "Sneasler",
+"LocalTexts": {
+"ja": "オオニューラ",
+"ko": "포푸니크",
+"zh-hant": "大狃拉",
+"fr": "Farfurex",
+"de": "Snieboss",
+"it": "Sneasler",
+"ja-jp": "オオニューラ",
+"zh-hans": "大狃拉"
+}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 9993
+},
+"yorue": {
+"$type": "RogueEssence.Data.MonsterEntrySummary, RogueEssence",
+"Forms": [
+{
+"Name": {
+"DefaultText": "Dreepy",
+"LocalTexts": {
+"ja": "ドラメシヤ",
+"ko": "드라꼰",
+"zh-hant": "多龍梅西亞",
+"fr": "Fantyrm",
+"de": "Grolldra",
+"es": "Dreepy",
+"it": "Dreepy",
+"ja-jp": "ドラメシヤ",
+"zh-hans": "多龙梅西亚"
+}
+},
+"Released": true,
+"Temporary": false
+}
+],
+"Name": {
+"DefaultText": "Dreepy",
+"LocalTexts": {
+"ja": "ドラメシヤ",
+"ko": "드라꼰",
+"zh-hant": "多龍梅西亞",
+"fr": "Fantyrm",
+"de": "Grolldra",
+"es": "Dreepy",
+"it": "Dreepy",
+"ja-jp": "ドラメシヤ",
+"zh-hans": "多龙梅西亚"
+}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 9995
+}
+}
+}
