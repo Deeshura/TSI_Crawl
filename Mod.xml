@@ -1,0 +1,11 @@
+<Header>
+  <Name>TSI: Crawl</Name>
+  <Author>Deeshura</Author>
+  <Description>When a Mystery Den is discovered beneath the city, the Stellar Guild's finest are put on the case.</Description>
+  <Namespace>tsi_pmdo</Namespace>
+  <UUID>F8639EB1-A45E-4624-9E2B-EEAD1C0639AB</UUID>
+  <Version>0.0</Version>
+  <GameVersion>0.0</GameVersion>
+  <ModType>Quest</ModType>
+  <Relationships />
+</Header>
