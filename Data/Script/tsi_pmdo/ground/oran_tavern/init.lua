@@ -5,6 +5,7 @@
 ]]--
 -- Commonly included lua functions and data
 require 'origin.common'
+require 'tsi_pmdo.GeneralFunctions'
 
 -- Package name
 local oran_tavern = {}
@@ -23,7 +24,16 @@ end
 --Engine callback function
 function oran_tavern.Enter(map)
 
-  GAME:FadeIn(20)
+  local player = CH('PLAYER')
+
+  GeneralFunctions.DeeshSetPlayer()
+
+  --Player always 'enters' the map either via the intro scene or a new day, so this is an easy if statement
+  if SV.a_oran_tavern.IntroSeen then
+    oran_tavern.NewDayScene()
+  else
+    oran_tavern.IntroScene()
+  end
 
 end
 
@@ -57,9 +67,53 @@ function oran_tavern.GameLoad(map)
 end
 
 -------------------------------
+-- Cutscene Functions
+-------------------------------
+
+function oran_tavern.IntroScene(map)
+
+  GAME:FadeIn(20)
+
+  UI:WaitShowDialogue("Oran Tavern intro scene in this function.")
+
+  --Set player money to 2k
+
+  _DATA.Save.ActiveTeam.Money = 2000
+
+  SV.a_oran_tavern.IntroSeen = true
+
+  GAME:CutsceneMode(false)
+
+end
+
+function oran_tavern.NewDayScene(map)
+
+  GAME:FadeIn(20)
+
+  --Set player money to 2k
+
+  _DATA.Save.ActiveTeam.Money = 2000
+
+  --Reset all party members to level 1, reset skills, and clear any boosts.
+
+  UI:WaitShowDialogue("Oran Tavern new day scene in this function.")
+  
+  GAME:CutsceneMode(false)
+
+end
+
+-------------------------------
 -- Entities Callbacks
 -------------------------------
 
+function oran_tavern.Board_Action(obj, activator)
+  DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+  UI:ResetSpeaker()
+  SOUND:PlaySE("Menu/Skip")
+  UI:AssemblyMenu()
+  UI:WaitForChoice()
+  result = UI:ChoiceResult()
+end
 
 return oran_tavern
 

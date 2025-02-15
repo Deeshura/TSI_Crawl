@@ -364,9 +364,9 @@
 "PromoteForm": 0,
 "Element1": "ground",
 "Element2": "none",
-"Intrinsic1": "rock_head",
-"Intrinsic2": "lightning_rod",
-"Intrinsic3": "battle_armor",
+"Intrinsic1": "berserk",
+"Intrinsic2": "none",
+"Intrinsic3": "none",
 "LevelSkills": [
 {
 "Level": 1,

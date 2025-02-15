@@ -461,9 +461,9 @@
 "PromoteForm": 0,
 "Element1": "steel",
 "Element2": "rock",
-"Intrinsic1": "sturdy",
-"Intrinsic2": "rock_head",
-"Intrinsic3": "heavy_metal",
+"Intrinsic1": "solid_rock",
+"Intrinsic2": "none",
+"Intrinsic3": "none",
 "LevelSkills": [
 {
 "Level": 1,

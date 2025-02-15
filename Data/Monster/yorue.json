@@ -146,9 +146,9 @@
 "PromoteForm": 0,
 "Element1": "dragon",
 "Element2": "ghost",
-"Intrinsic1": "clear_body",
-"Intrinsic2": "infiltrator",
-"Intrinsic3": "cursed_body",
+"Intrinsic1": "infiltrator",
+"Intrinsic2": "none",
+"Intrinsic3": "none",
 "LevelSkills": [
 {
 "Level": 1,

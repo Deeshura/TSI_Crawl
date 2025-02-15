@@ -34,6 +34,10 @@ Cubone - felis_licht, Emmuffin, edits by Deeshura
 
 All original Pokemon Mystery Dungeon assets owned by Spike Chunsoft, Nintendo, The Pokemon Company, Gamefreak, and Creatures Inc.
 
+## Code and Scripting
+
+General functions and other miscellaneous lua scriping - Palika
+
 ## Sprites
 
 Cacturne - Chunsoft, edits by Deeshura

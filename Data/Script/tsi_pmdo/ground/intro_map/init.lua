@@ -23,7 +23,121 @@ end
 --Engine callback function
 function intro_map.Enter(map)
 
+  GAME:CutsceneMode(true)
+	UI:ResetSpeaker()
+	SOUND:FadeOutBGM()
+
+  -- game prep functions
+
+  --- Set team size to three
+
+  RogueEssence.Dungeon.ExplorerTeam.MAX_TEAM_SLOTS = 3
+
+  --- disable recruitment, just in case
+
+  GAME:SetCanRecruit(false)
+
+  --- remove any team members that may exist by default for some reason. yoinked from halcyon
+	local party_count = _DATA.Save.ActiveTeam.Players.Count
+	for ii = 1, party_count, 1 do
+		_DATA.Save.ActiveTeam.Players:RemoveAt(0)
+	end
+
+	local assembly_count = GAME:GetPlayerAssemblyCount()
+	for i = 1, assembly_count, 1 do
+	   _DATA.Save.ActiveTeam.Assembly.RemoveAt(i-1)--not sure if this permanently deletes or not...
+	end
+
+  --- Make Grisha party member
+  
+  local mon_id = RogueEssence.Dungeon.MonsterID("grisha", 0, "normal", Gender.Male)
+  local member = _DATA.Save.ActiveTeam:CreatePlayer(_DATA.Save.Rand, mon_id, 1, "", 0)
+  member.Nickname = "Grisha"
+  member.MetAt = "The Beginning"
+  member.MetLoc = RogueEssence.Dungeon.ZoneLoc(_ZONE.CurrentZoneID, _ZONE.CurrentMapID)
+
+  GAME:AddPlayerTeam(member)
+
+  --- Add team members to assembly
+
+  ---- Ferris
+
+  local mon_id = RogueEssence.Dungeon.MonsterID("ferris", 0, "normal", Gender.Male)
+  local member = _DATA.Save.ActiveTeam:CreatePlayer(_DATA.Save.Rand, mon_id, 1, "", 0)
+  member.Nickname = "Ferris"
+  member.MetAt = "The Beginning"
+  member.MetLoc = RogueEssence.Dungeon.ZoneLoc(_ZONE.CurrentZoneID, _ZONE.CurrentMapID)
+
+  GAME:AddPlayerAssembly(member)
+
+  ---- Edel
+
+  local mon_id = RogueEssence.Dungeon.MonsterID("edelweiss", 0, "normal", Gender.Female)
+  local member = _DATA.Save.ActiveTeam:CreatePlayer(_DATA.Save.Rand, mon_id, 1, "", 0)
+  member.Nickname = "Edel"
+  member.MetAt = "The Beginning"
+  member.MetLoc = RogueEssence.Dungeon.ZoneLoc(_ZONE.CurrentZoneID, _ZONE.CurrentMapID)
+
+  GAME:AddPlayerAssembly(member)
+
+  ---- Shasta
+
+  local mon_id = RogueEssence.Dungeon.MonsterID("shasta", 0, "normal", Gender.Male)
+  local member = _DATA.Save.ActiveTeam:CreatePlayer(_DATA.Save.Rand, mon_id, 1, "", 0)
+  member.Nickname = "Shasta"
+  member.MetAt = "The Beginning"
+  member.MetLoc = RogueEssence.Dungeon.ZoneLoc(_ZONE.CurrentZoneID, _ZONE.CurrentMapID)
+
+  GAME:AddPlayerAssembly(member)
+
+  ---- Yo'rue
+
+  local mon_id = RogueEssence.Dungeon.MonsterID("yorue", 0, "normal", Gender.Male)
+  local member = _DATA.Save.ActiveTeam:CreatePlayer(_DATA.Save.Rand, mon_id, 1, "", 0)
+  member.Nickname = "Yo\'rue"
+  member.MetAt = "The Beginning"
+  member.MetLoc = RogueEssence.Dungeon.ZoneLoc(_ZONE.CurrentZoneID, _ZONE.CurrentMapID)
+
+  GAME:AddPlayerAssembly(member)
+
+  -- Intro Scene!
+
+  local player = CH('PLAYER')
+
+  GROUND:Hide('PLAYER') -- Hide the player.
+
   GAME:FadeIn(20)
+
+  -- Play intro music
+
+  -- slideshow going over the lore here (TODO)
+
+  UI:WaitShowVoiceOver("Slideshow going over the lore here.", -1)
+
+  -- Fade out music
+
+  -- Play character intro music
+
+  -- Deeshura proudly presents dialogue
+
+  UI:WaitShowVoiceOver("Deeshura proudly presents...", -1)
+
+  UI:WaitShowVoiceOver("Based on \'The Stellar Islands\'...", -1)
+
+  -- Title Card
+
+  UI:WaitShowVoiceOver("Show title card here", -1)
+
+  -- Cool character intro sequence!
+
+  UI:WaitShowVoiceOver("Show animated character intro here", -1)
+
+  -- After intro sequence, take player to oran tavern.
+
+  GAME:FadeOut(false, 20)
+  GAME:WaitFrames(300)
+
+  GAME:EnterGroundMap("a_oran_tavern", "oran_tavern", "Entrance", false)
 
 end
 
