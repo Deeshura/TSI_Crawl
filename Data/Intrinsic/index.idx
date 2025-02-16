@@ -1,0 +1,25 @@
+﻿{
+"Version": "0.8.8.0",
+"Object": {
+"$type": "System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib],[RogueEssence.Data.EntrySummary, RogueEssence]], System.Private.CoreLib",
+"berserk": {
+"Name": {
+"DefaultText": "Berserk",
+"LocalTexts": {
+"fr": "Dracolère",
+"de": "Wutausbruch",
+"es": "Cólera",
+"it": "Furore",
+"ko": "발끈",
+"ja": "ぎゃくじょう",
+"ja-jp": "ぎゃくじょう",
+"zh-hans": "怒火冲天",
+"zh-hant": "怒火沖天"
+}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 201
+}
+}
+}

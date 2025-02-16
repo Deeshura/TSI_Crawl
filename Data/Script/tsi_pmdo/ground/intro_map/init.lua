@@ -55,6 +55,7 @@ function intro_map.Enter(map)
   member.Nickname = "Grisha"
   member.MetAt = "The Beginning"
   member.MetLoc = RogueEssence.Dungeon.ZoneLoc(_ZONE.CurrentZoneID, _ZONE.CurrentMapID)
+  member.IsFounder = true
 
   GAME:AddPlayerTeam(member)
 
@@ -67,6 +68,7 @@ function intro_map.Enter(map)
   member.Nickname = "Ferris"
   member.MetAt = "The Beginning"
   member.MetLoc = RogueEssence.Dungeon.ZoneLoc(_ZONE.CurrentZoneID, _ZONE.CurrentMapID)
+  member.IsFounder = true
 
   GAME:AddPlayerAssembly(member)
 
@@ -77,6 +79,7 @@ function intro_map.Enter(map)
   member.Nickname = "Edel"
   member.MetAt = "The Beginning"
   member.MetLoc = RogueEssence.Dungeon.ZoneLoc(_ZONE.CurrentZoneID, _ZONE.CurrentMapID)
+  member.IsFounder = true
 
   GAME:AddPlayerAssembly(member)
 
@@ -87,6 +90,7 @@ function intro_map.Enter(map)
   member.Nickname = "Shasta"
   member.MetAt = "The Beginning"
   member.MetLoc = RogueEssence.Dungeon.ZoneLoc(_ZONE.CurrentZoneID, _ZONE.CurrentMapID)
+  member.IsFounder = true
 
   GAME:AddPlayerAssembly(member)
 
@@ -97,6 +101,7 @@ function intro_map.Enter(map)
   member.Nickname = "Yo\'rue"
   member.MetAt = "The Beginning"
   member.MetLoc = RogueEssence.Dungeon.ZoneLoc(_ZONE.CurrentZoneID, _ZONE.CurrentMapID)
+  member.IsFounder = true
 
   GAME:AddPlayerAssembly(member)
 

@@ -97,7 +97,9 @@ function oran_tavern.NewDayScene(map)
   --Reset all party members to level 1, reset skills, and clear any boosts.
 
   UI:WaitShowDialogue("Oran Tavern new day scene in this function.")
-  
+
+  GeneralFunctions.PurgePlayer()
+
   GAME:CutsceneMode(false)
 
 end
@@ -114,6 +116,14 @@ function oran_tavern.Board_Action(obj, activator)
   UI:WaitForChoice()
   result = UI:ChoiceResult()
 end
+
+function oran_tavern.Strip_Action(obj, activator)
+  DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+  UI:ResetSpeaker()
+  SOUND:PlaySE("Menu/Skip")
+  GeneralFunctions.PurgePlayer()
+end
+
 
 return oran_tavern
 
