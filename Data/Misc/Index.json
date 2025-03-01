@@ -11239,14 +11239,6 @@
 "Element2": "rock",
 "BestStat": -1,
 "WorstStat": -1
-},
-"1": {
-"Family": "aron",
-"Stage": 4,
-"Element1": "steel",
-"Element2": "none",
-"BestStat": -1,
-"WorstStat": -1
 }
 },
 "ferroseed": {
@@ -12472,7 +12464,7 @@
 "Family": "sneasel",
 "Stage": 4,
 "Element1": "fighting",
-"Element2": "poison",
+"Element2": "fire",
 "BestStat": -1,
 "WorstStat": -1
 }
@@ -17322,7 +17314,7 @@
 "shasta": {
 "0": {
 "Family": "shasta",
-"Stage": 2,
+"Stage": 1,
 "Element1": "ground",
 "Element2": "none",
 "BestStat": -1,
@@ -20482,7 +20474,7 @@
 "yorue": {
 "0": {
 "Family": "yorue",
-"Stage": 2,
+"Stage": 1,
 "Element1": "dragon",
 "Element2": "ghost",
 "BestStat": -1,

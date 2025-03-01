@@ -2,6 +2,48 @@
 "Version": "0.8.8.0",
 "Object": {
 "$type": "System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib],[RogueEssence.Data.EntrySummary, RogueEssence]], System.Private.CoreLib",
+"tropical_path": {
+"$type": "RogueEssence.Data.ZoneEntrySummary, RogueEssence",
+"ExpPercent": 75,
+"Level": 5,
+"LevelCap": false,
+"KeepSkills": false,
+"TeamRestrict": false,
+"TeamSize": -1,
+"MoneyRestrict": false,
+"BagRestrict": -1,
+"KeepTreasure": false,
+"BagSize": -1,
+"Rescues": 2,
+"CountedFloors": 5,
+"Rogue": 1,
+"Grounds": [],
+"Maps": [
+[
+0,
+1,
+2,
+3,
+4
+],
+[
+0
+],
+null
+],
+"Name": {
+"DefaultText": "Tropical Path",
+"LocalTexts": {
+"de": "Tropischer Pfad",
+"es": "Paso Tropical",
+"it": "Passaggio Tropicale",
+"zh-hans": "热带小径"
+}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 0
+},
 "a_oran_tavern": {
 "$type": "RogueEssence.Data.ZoneEntrySummary, RogueEssence",
 "ExpPercent": 100,
@@ -28,6 +70,52 @@
 },
 "Released": true,
 "Comment": "Main hub area.",
+"SortOrder": 0
+},
+"a_the_dungeon": {
+"$type": "RogueEssence.Data.ZoneEntrySummary, RogueEssence",
+"ExpPercent": 100,
+"Level": -1,
+"LevelCap": false,
+"KeepSkills": false,
+"TeamRestrict": false,
+"TeamSize": -1,
+"MoneyRestrict": false,
+"BagRestrict": -1,
+"KeepTreasure": false,
+"BagSize": -1,
+"Rescues": 0,
+"CountedFloors": 5,
+"Rogue": 0,
+"Grounds": [
+"aura_shrine"
+],
+"Maps": [
+[
+0
+],
+[
+0
+],
+[
+0
+],
+[
+0
+],
+[
+0
+],
+[
+0
+]
+],
+"Name": {
+"DefaultText": "The Dungeon",
+"LocalTexts": {}
+},
+"Released": true,
+"Comment": "The dungeon.",
 "SortOrder": 0
 }
 }
