@@ -895,6 +895,7 @@ function GeneralFunctions.DeeshSetPlayer()
 	GROUND:SetPlayer(character)
 end
 
+--Resets the skills and stat boosts of all team members, and sets them to level 1.
 function GeneralFunctions.PurgePlayer()
 	local player_count = _DATA.Save.ActiveTeam.Players.Count
 	for i = 0, player_count - 1, 1 do
@@ -912,6 +913,7 @@ function GeneralFunctions.PurgePlayer()
 	GeneralFunctions.SkillsPurge()
 end
 
+--Resets the skills of all team members.
 function GeneralFunctions.SkillsPurge()
 	local player_count = _DATA.Save.ActiveTeam.Players.Count
 	for i = 0, player_count - 1, 1 do

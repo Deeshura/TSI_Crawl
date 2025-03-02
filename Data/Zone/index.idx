@@ -85,7 +85,7 @@ null
 "KeepTreasure": false,
 "BagSize": -1,
 "Rescues": 0,
-"CountedFloors": 5,
+"CountedFloors": 6,
 "Rogue": 0,
 "Grounds": [
 "aura_shrine"
