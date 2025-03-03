@@ -85,12 +85,18 @@ null
 "KeepTreasure": false,
 "BagSize": -1,
 "Rescues": 0,
-"CountedFloors": 6,
+"CountedFloors": 7,
 "Rogue": 0,
 "Grounds": [
-"aura_shrine"
+"aura_shrine",
+"old_buesares_sealed",
+"old_buesares",
+"old_buesares_clean"
 ],
 "Maps": [
+[
+0
+],
 [
 0
 ],

@@ -49,14 +49,14 @@ function a_the_dungeon.ExitSegment(zone, result, rescue, segmentID, mapID)
       elseif segmentID == 3 then --cleared burning
         GAME:EnterZone("a_the_dungeon", -1, 0, 0) --send to the aura shrine
       elseif segmentID == 4 then --cleared aurum
-        GAME:EnterZone("a_the_dungeon", -1, 0, 0) --send to the old buesares
+        GAME:EnterZone("a_the_dungeon", -1, 1, 0) --send to the old buesares (sealed)
       --boss clears
       elseif segmentID == 5 then --beat ranefia
           SV.a_the_dungeon.boss_01_defeated = true --false = boss unbeaten, true = boss beaten
           GAME:EnterZone("a_the_dungeon", -1, 0, 0) --send to the aura shrine with outro savevar
       elseif segmentID == 6 then --beat darkrai
             SV.a_the_dungeon.boss_02_defeated = true --false = boss unbeaten, true = boss beaten
-          GAME:EnterZone("a_the_dungeon", -1, 1, 0) --send to old buesares with outro savevar
+          GAME:EnterZone("a_the_dungeon", -1, 2, 0) --send to old buesares (unsealed) with outro savevar
       else --something wrong
         PrintInfo("No exit procedure found!")
         COMMON.EndDungeonDay(result, 'a_oran_tavern', -1, 1, 0)

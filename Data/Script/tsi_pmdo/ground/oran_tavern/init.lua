@@ -108,6 +108,7 @@ end
 -- Entities Callbacks
 -------------------------------
 
+--Notice Board Function
 function oran_tavern.Board_Action(obj, activator)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
   UI:ResetSpeaker()
@@ -117,6 +118,7 @@ function oran_tavern.Board_Action(obj, activator)
   result = UI:ChoiceResult()
 end
 
+--Test Start of Day Function
 function oran_tavern.Strip_Action(obj, activator)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
   UI:ResetSpeaker()
@@ -124,6 +126,13 @@ function oran_tavern.Strip_Action(obj, activator)
   GeneralFunctions.PurgePlayer()
 end
 
+--Dungeon Entrance Function
+function oran_tavern.Exit_Touch(obj, activator)
+  DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+  local dungeon_entrances = { 'a_the_dungeon' }
+  local ground_entrances = {{Zone='guildmaster_island',ID=3,Entry=0}}
+  COMMON.ShowDestinationMenu(dungeon_entrances, ground_entrances)
+end
 
 return oran_tavern
 

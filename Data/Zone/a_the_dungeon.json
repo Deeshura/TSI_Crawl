@@ -5714,10 +5714,38 @@
 "ZoneSteps": [],
 "IsRelevant": true,
 "Comment": "Boss Room A"
+},
+{
+"$type": "RogueEssence.LevelGen.LayeredSegment, RogueEssence",
+"Floors": [
+{
+"$type": "RogueEssence.LevelGen.LoadGen, RogueEssence",
+"GenSteps": [
+{
+"Key": {
+"str": [
+-1
+]
+},
+"Value": {
+"$type": "RogueEssence.LevelGen.MappedRoomStep`1[[RogueEssence.LevelGen.MapLoadContext, RogueEssence]], RogueEssence",
+"MapID": "old_buesares"
+}
+}
+],
+"Comment": ""
+}
+],
+"ZoneSteps": [],
+"IsRelevant": true,
+"Comment": "Boss Room A"
 }
 ],
 "GroundMaps": [
-"aura_shrine"
+"aura_shrine",
+"old_buesares_sealed",
+"old_buesares",
+"old_buesares_clean"
 ]
 }
 }
