@@ -91,6 +91,16 @@ SV.a_oran_tavern =
   IntroSeen = false
 }
 
+SV.dungeon_defeat = false
+
+SV.a_the_dungeon =
+{
+  boss_01_defeated = false,
+  boss_02_defeated = false,
+  boss_01_cutscene = false,
+  boss_02_cutscene = false
+}
+
 SV.grisha = { Species = "grisha", Form = 0, Skin = "normal", Gender = 1 }
 
 -----------------------------------------------
