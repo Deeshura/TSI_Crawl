@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.NetStandard.ResXResourceReader, System.Resources.NetStandard, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.NetStandard.ResXResourceWriter, System.Resources.NetStandard, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </resheader>
+  <data name="Shop_Intro" xml:space="preserve">
+    <value>Here to stock up?</value>
+    <comment>Shop Intro Text</comment>
+  </data>
+  <data name="Shop_Intro_Return" xml:space="preserve">
+    <value>That everything?</value>
+    <comment>Shop Return To Menu</comment>
+  </data>
+  <data name="Shop_Option_Buy" xml:space="preserve">
+    <value>Buy</value>
+    <comment>Shop Buy Option</comment>
+  </data>
+  <data name="Shop_Option_Sell" xml:space="preserve">
+    <value>Sell</value>
+    <comment>Shop Sell Option</comment>
+  </data>
+  <data name="Shop_Buy" xml:space="preserve">
+    <value>Right.[pause=5] Here's the goods.</value>
+    <comment>Buying</comment>
+  </data>
+  <data name="Shop_Buy_Empty" xml:space="preserve">
+    <value>'Fraid we're sold out.[pause=0] Come back tomorrow.</value>
+    <comment>Buy option, but out of items</comment>
+  </data>
+  <data name="Shop_Sell" xml:space="preserve">
+    <value>Selling?[pause=5] Alright then...</value>
+    <comment>Selling</comment>
+  </data>
+  <data name="Shop_Bag_Empty" xml:space="preserve">
+    <value>What?[pause=5] But you've got nothing to sell...</value>
+    <comment>Sell option, but nothing to sell</comment>
+  </data>
+  <data name="Shop_Info_001" xml:space="preserve">
+    <value>In case you need a refresher;[pause=5] Dorgan's agreed for me to help keep your team stocked up.</value>
+    <comment>Flavour dialogue</comment>
+  </data>
+  <data name="Shop_Info_002" xml:space="preserve">
+    <value>You've got a budget of 2 grand per day for goods.[pause=0] Spend it wisely.</value>
+    <comment>Flavour dialogue part 2</comment>
+  </data>
+  <data name="Shop_Info_003" xml:space="preserve">
+    <value>Or not at all.[pause=0] I 'aint your pa, after all.</value>
+    <comment>Flavour dialogue part 3</comment>
+  </data>
+  <data name="Shop_Goodbye" xml:space="preserve">
+    <value>Good luck down there.</value>
+    <comment>Leaving shop</comment>
+  </data>
+  <data name="Shop_Bag_Full" xml:space="preserve">
+    <value>Don't know how you managed to cram that much stuff in your coat pockets,[pause=5] but this 'aint gonna fit in there.</value>
+    <comment>Shop option, but bag is full.</comment>
+  </data>
+  <data name="Shop_Buy_No_Money&#xA;" xml:space="preserve">
+    <value>You serious?[pause=0] I don't haggle,[pause=5] detective.</value>
+    <comment>Not enough money to buy</comment>
+  </data>
+  <data name="Shop_Buy_One" xml:space="preserve">
+    <value>That'll be {0} for that {1}. That good?</value>
+    <comment>Buying one item.</comment>
+  </data>
+  <data name="Shop_Buy_Multi" xml:space="preserve">
+    <value>That'll be {0} for all that. That good?</value>
+    <comment>Buying multiple items.</comment>
+  </data>
+  <data name="Shop_Buy_Complete" xml:space="preserve">
+    <value>Another satisfied customer.</value>
+    <comment>Finish buying an item.</comment>
+  </data>
+  <data name="Shop_Sell_One" xml:space="preserve">
+    <value>I'll pay {0} for that {1}. That good?</value>
+    <comment>Selling one item.</comment>
+  </data>
+  <data name="Shop_Sell_Multi" xml:space="preserve">
+    <value>I'll pay {0} for all that. That good?</value>
+    <comment>Selling multiple items.</comment>
+  </data>
+  <data name="Shop_Sell_Complete" xml:space="preserve">
+    <value>I love a good deal.</value>
+    <comment>Finish selling an item.</comment>
+  </data>
+  <data name="Behind_Counter_1" xml:space="preserve">
+    <value>Oi.[pause=0] Detective.[pause=0] You know the rules.</value>
+    <comment>Tried talking to Lawrence from behind the counter.</comment>
+  </data>
+  <data name="Behind_Counter_2" xml:space="preserve">
+    <value>You want service?[pause=0] We talk OVER the counter,[pause=5] not behind it.</value>
+    <comment>Tried talking to Lawrence from behind the counter, 2.</comment>
+  </data>
+</root>

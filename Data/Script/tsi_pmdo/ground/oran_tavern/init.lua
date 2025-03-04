@@ -134,5 +134,184 @@ function oran_tavern.Exit_Touch(obj, activator)
   COMMON.ShowDestinationMenu(dungeon_entrances, ground_entrances)
 end
 
+function oran_tavern.shop_Action(obj, activator)
+  DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+
+  local player = CH('PLAYER')
+  local chara = CH('Lawrence')
+  UI:SetSpeaker(chara)
+
+  GROUND:CharTurnToCharAnimated(chara, player, 3)
+
+  local state = 0
+  local repeated = false
+  local cart = {}
+  local catalog = { }
+  for ii = 1, #SV.base_shop, 1 do
+	local base_data = SV.base_shop[ii]
+	local item_data = { Item = RogueEssence.Dungeon.InvItem(base_data.Index, false, base_data.Amount), Price = base_data.Price }
+	table.insert(catalog, item_data)
+  end
+
+	while state > -1 do
+		if state == 0 then
+			local msg = STRINGS:Format(STRINGS.MapStrings['Shop_Intro'])
+			if repeated == true then
+				msg = STRINGS:Format(STRINGS.MapStrings['Shop_Intro_Return'])
+			end
+			local shop_choices = {STRINGS:Format(STRINGS.MapStrings['Shop_Option_Buy']), STRINGS:Format(STRINGS.MapStrings['Shop_Option_Sell']),
+			STRINGS:FormatKey("MENU_INFO"),
+			STRINGS:FormatKey("MENU_EXIT")}
+			UI:BeginChoiceMenu(msg, shop_choices, 1, 4)
+			UI:WaitForChoice()
+			local result = UI:ChoiceResult()
+			repeated = true
+			if result == 1 then
+				if #catalog > 0 then
+					--TODO: use the enum instead of a hardcoded number
+					UI:WaitShowDialogue(STRINGS:Format(STRINGS.MapStrings['Shop_Buy'], STRINGS:LocalKeyString(26)))
+					state = 1
+				else
+					UI:WaitShowDialogue(STRINGS:Format(STRINGS.MapStrings['Shop_Buy_Empty']))
+				end
+			elseif result == 2 then
+				local bag_count = GAME:GetPlayerBagCount() + GAME:GetPlayerEquippedCount()
+				if bag_count > 0 then
+					--TODO: use the enum instead of a hardcoded number
+					UI:WaitShowDialogue(STRINGS:Format(STRINGS.MapStrings['Shop_Sell'], STRINGS:LocalKeyString(26)))
+					state = 3
+				else
+					UI:WaitShowDialogue(STRINGS:Format(STRINGS.MapStrings['Shop_Bag_Empty']))
+				end
+			elseif result == 3 then
+				UI:WaitShowDialogue(STRINGS:Format(STRINGS.MapStrings['Shop_Info_001']))
+				UI:WaitShowDialogue(STRINGS:Format(STRINGS.MapStrings['Shop_Info_002']))
+				UI:WaitShowDialogue(STRINGS:Format(STRINGS.MapStrings['Shop_Info_003']))
+			else
+				UI:WaitShowDialogue(STRINGS:Format(STRINGS.MapStrings['Shop_Goodbye']))
+				state = -1
+			end
+		elseif state == 1 then
+			UI:ShopMenu(catalog)
+			UI:WaitForChoice()
+			local result = UI:ChoiceResult()
+			if #result > 0 then
+				local bag_count = GAME:GetPlayerBagCount() + GAME:GetPlayerEquippedCount()
+				local bag_cap = GAME:GetPlayerBagLimit()
+				if bag_count == bag_cap then
+					UI:WaitShowDialogue(STRINGS:Format(STRINGS.MapStrings['Shop_Bag_Full']))
+				else
+					cart = result
+					state = 2
+				end
+			else
+				state = 0
+			end
+		elseif state == 2 then
+			local total = 0
+			for ii = 1, #cart, 1 do
+				total = total + catalog[cart[ii]].Price
+			end
+			local msg
+			if total > GAME:GetPlayerMoney() then
+				UI:WaitShowDialogue(STRINGS:Format(STRINGS.MapStrings['Shop_Buy_No_Money']))
+				state = 1
+			else
+				if #cart == 1 then
+					local name = catalog[cart[1]].Item:GetDisplayName()
+					msg = STRINGS:Format(STRINGS.MapStrings['Shop_Buy_One'], STRINGS:FormatKey("MONEY_AMOUNT", total), name)
+				else
+					msg = STRINGS:Format(STRINGS.MapStrings['Shop_Buy_Multi'], STRINGS:FormatKey("MONEY_AMOUNT", total))
+				end
+				UI:ChoiceMenuYesNo(msg, false)
+				UI:WaitForChoice()
+				result = UI:ChoiceResult()
+
+				if result then
+					GAME:RemoveFromPlayerMoney(total)
+					for ii = 1, #cart, 1 do
+						local item = catalog[cart[ii]].Item
+						GAME:GivePlayerItem(item.ID, item.Amount, false)
+					end
+					for ii = #cart, 1, -1 do
+						table.remove(catalog, cart[ii])
+						table.remove(SV.base_shop, cart[ii])
+					end
+
+					cart = {}
+					SOUND:PlayBattleSE("DUN_Money")
+					UI:WaitShowDialogue(STRINGS:Format(STRINGS.MapStrings['Shop_Buy_Complete']))
+					state = 0
+				else
+					state = 1
+				end
+			end
+		elseif state == 3 then
+			UI:SellMenu()
+			UI:WaitForChoice()
+			local result = UI:ChoiceResult()
+
+			if #result > 0 then
+				cart = result
+				state = 4
+			else
+				state = 0
+			end
+		elseif state == 4 then
+			local total = 0
+			for ii = 1, #cart, 1 do
+				local item
+				if cart[ii].IsEquipped then
+					item = GAME:GetPlayerEquippedItem(cart[ii].Slot)
+				else
+					item = GAME:GetPlayerBagItem(cart[ii].Slot)
+				end
+				total = total + item:GetSellValue()
+			end
+			local msg
+			if #cart == 1 then
+				local item
+				if cart[1].IsEquipped then
+					item = GAME:GetPlayerEquippedItem(cart[1].Slot)
+				else
+					item = GAME:GetPlayerBagItem(cart[1].Slot)
+				end
+				msg = STRINGS:Format(STRINGS.MapStrings['Shop_Sell_One'], STRINGS:FormatKey("MONEY_AMOUNT", total), item:GetDisplayName())
+			else
+				msg = STRINGS:Format(STRINGS.MapStrings['Shop_Sell_Multi'], STRINGS:FormatKey("MONEY_AMOUNT", total))
+			end
+			UI:ChoiceMenuYesNo(msg, false)
+			UI:WaitForChoice()
+			result = UI:ChoiceResult()
+
+			if result then
+				for ii = #cart, 1, -1 do
+					if cart[ii].IsEquipped then
+						GAME:TakePlayerEquippedItem(cart[ii].Slot, true)
+					else
+						GAME:TakePlayerBagItem(cart[ii].Slot, true)
+					end
+				end
+				SOUND:PlayBattleSE("DUN_Money")
+				GAME:AddToPlayerMoney(total)
+				cart = {}
+				UI:WaitShowDialogue(STRINGS:Format(STRINGS.MapStrings['Shop_Sell_Complete']))
+				state = 0
+			else
+				state = 3
+			end
+		end
+	end
+end
+
+function oran_tavern.Lawrence_Action(obj, activator)
+  local player = CH('PLAYER')
+  local chara = CH('Lawrence')
+  UI:SetSpeaker(chara)
+  GROUND:CharTurnToCharAnimated(chara, player, 3)
+  UI:WaitShowDialogue(STRINGS:Format(STRINGS.MapStrings['Behind_Counter_1']))
+  UI:WaitShowDialogue(STRINGS:Format(STRINGS.MapStrings['Behind_Counter_2']))
+end
+
 return oran_tavern
 

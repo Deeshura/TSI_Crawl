@@ -85179,7 +85179,7 @@
 "Direction": 0,
 "IsInteracting": false,
 "AIEnabled": true,
-"EntName": "Laurence",
+"EntName": "Lawrence",
 "EntEnabled": true,
 "EntOrder": 0,
 "InteractOrder": 0,
@@ -85265,8 +85265,8 @@
 },
 "CollisionDisabled": false,
 "Collider": {
-"X": 504,
-"Y": 206,
+"X": 496,
+"Y": 224,
 "Width": 16,
 "Height": 16
 }
@@ -86499,6 +86499,49 @@
 "Y": 432,
 "Width": 112,
 "Height": 8
+}
+},
+{
+"EntName": "shop",
+"Direction": 0,
+"EntEnabled": true,
+"EntOrder": 0,
+"InteractOrder": 0,
+"triggerType": 1,
+"ObjectAnim": {
+"$type": "RogueEssence.Content.ObjAnimData, RogueEssence",
+"AnimIndex": "",
+"FrameTime": 1,
+"StartFrame": -1,
+"EndFrame": -1,
+"AnimDir": -1,
+"Alpha": 255,
+"AnimFlip": 0
+},
+"Passable": true,
+"CurrentAnim": {
+"$type": "RogueEssence.Content.ObjAnimData, RogueEssence",
+"AnimIndex": "",
+"FrameTime": 1,
+"StartFrame": -1,
+"EndFrame": -1,
+"AnimDir": -1,
+"Alpha": 255,
+"AnimFlip": 0
+},
+"AnimTime": {
+"Ticks": 0
+},
+"Cycles": 0,
+"DrawOffset": {
+"X": 0,
+"Y": 0
+},
+"Collider": {
+"X": 488,
+"Y": 240,
+"Width": 32,
+"Height": 24
 }
 }
 ],
